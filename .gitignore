@@ -1,0 +1,6 @@
+/node_modules/
+/dist/
+/artifacts/
+*.ehpk
+/screenshot*.png
+/evenhub-screenshot*.png

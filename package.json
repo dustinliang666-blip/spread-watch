@@ -1,0 +1,26 @@
+{
+  "name": "spread-watch",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.22.1 <25"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "smoke:sim": "node scripts/smoke-sim.js",
+    "pack:offline": "node scripts/pack-offline.js",
+    "verify:bundle": "node scripts/verify-bundle.js"
+  },
+  "optionalDependencies": {
+    "@evenrealities/even_hub_sdk": "0.0.16"
+  },
+  "devDependencies": {
+    "@evenrealities/evenhub-cli": "0.2.0",
+    "@evenrealities/evenhub-simulator": "0.9.5",
+    "playwright-core": "1.56.1",
+    "pngjs": "7.0.0"
+  }
+}

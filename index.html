@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spread Watch</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./companion.js"></script>
+</head>
+<body>
+  <main>
+    <header class="site-header">
+      <h1>Spread Watch</h1>
+      <span class="mode" id="mode">REPLAY · PAPER</span>
+    </header>
+
+    <div class="workbench">
+      <section class="panel display" aria-labelledby="lens-heading">
+        <div class="section-heading">
+          <h2 id="lens-heading">G2 preview</h2>
+          <span class="meta">576 × 288</span>
+        </div>
+        <div class="lens" id="lens" aria-live="polite" aria-atomic="true" aria-label="G2 display"></div>
+        <div class="preview-controls" aria-label="Preview input">
+          <button type="button" id="up" disabled><span aria-hidden="true">↑ </span>Scroll up</button>
+          <button type="button" id="down" disabled><span aria-hidden="true">↓ </span>Scroll down</button>
+          <button type="button" id="tap" disabled>Tap</button>
+        </div>
+      </section>
+
+      <section class="panel controls" aria-labelledby="control-heading">
+        <h2 id="control-heading">Replay controls</h2>
+        <div class="replay-time" id="replay-time" aria-label="Replay time">00:00</div>
+        <div class="replay-controls">
+          <button type="button" class="primary" id="next" disabled>Next sample <span aria-hidden="true">→</span></button>
+          <button type="button" id="reset" disabled>Reset replay</button>
+        </div>
+        <button type="button" id="retry" hidden>Retry failed escalation</button>
+        <div class="delivery-controls">
+          <div class="section-heading">
+            <h3>Telegram delivery</h3>
+            <span class="meta" id="bot-ready">MOCK</span>
+          </div>
+          <label class="delivery-toggle"><input type="checkbox" id="bot" disabled> Enable real Bot delivery</label>
+          <p id="delivery-note">Escalations go to the local Mock inbox.</p>
+        </div>
+      </section>
+    </div>
+
+    <p id="notice" class="notice" role="status" hidden></p>
+    <div class="records">
+      <section class="panel" aria-labelledby="activity-heading">
+        <h2 id="activity-heading">Disposition log</h2>
+        <p id="activity-empty">No actions recorded.</p>
+        <ol id="activity" class="entries"></ol>
+      </section>
+      <section class="panel" aria-labelledby="inbox-heading" id="mock-panel">
+        <h2 id="inbox-heading">Mock Telegram inbox</h2>
+        <p id="inbox-empty">Escalated alerts will appear here.</p>
+        <ol id="inbox" class="entries"></ol>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
